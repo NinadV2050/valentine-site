@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #fff0f5;
+        }
+        .container {
+            position: relative;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+        }
+        img {
+            width: 200px;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none;
+            font-size: 24px;
+            color: #ff4081;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Be My Valentine? ❤️</h1>
+    <img src="https://i.imgur.com/J5LVHEL.png" alt="Cute Teddy Bear">
+    <img src="https://i.imgur.com/dZKvKjT.png" alt="Sunflower">
+    <div class="container">
+        <button class="btn yes" onclick="showMessage()">YES</button>
+        <button class="btn no" onmouseover="moveButton()">NO</button>
+    </div>
+    <p class="hidden" id="cuteMessage">Yay! You made my heart so happy! 💖😍🥰</p>
+    <img class="hidden" id="loveImage" src="https://i.imgur.com/wOmoe0W.png" alt="Happy Hearts">
+    <img class="hidden" id="hugsImage" src="https://i.imgur.com/1JQ4ojG.png" alt="Cute Hugs">
+
+    <script>
+        function moveButton() {
+            const button = document.querySelector('.no');
+            const x = Math.random() * (window.innerWidth - button.clientWidth);
+            const y = Math.random() * (window.innerHeight - button.clientHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+        
+        function showMessage() {
+            document.getElementById('cuteMessage').classList.remove('hidden');
+            document.getElementById('loveImage').classList.remove('hidden');
+            document.getElementById('hugsImage').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
